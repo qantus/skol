@@ -1,0 +1,100 @@
+{%- extends "base.html" -%}
+
+
+{% block before_content %}
+    <section class="slider">
+        <div class="row">
+            <div class="columns large-12">
+                <section class="image-holder">
+                    <img src="/static/dist/images/main/man.jpg" alt=""/>
+
+                    <div class="text-block">
+                        <div class="text-data">
+                            <div class="title first-line">
+                                Скользит пол?
+                            </div>
+                            <div class="title second-line">
+                                У нас есть решение!
+                            </div>
+                            <div class="info">
+                                Уникальное противоскользящее покрытие! Успейте купить по уникальной цене
+                                от производителя — всего 800 руб. за литр!
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section class="counter-line">
+        <div class="row">
+            <div class="column large-12">
+
+                <form class="form">
+                    <div class="row">
+                        <div class="column large-4">
+                            <input type="text" name="name" placeholder="Ваше имя"/>
+                        </div>
+                        <div class="column large-4">
+                            <input type="text" name="phone" placeholder="Ваш телефон"/>
+                        </div>
+                        <div class="column large-4">
+                            <button type="submit">
+                                Отправить заявку
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="counter-block">
+                    <div class="title">
+                        До конца акции осталось:
+                    </div>
+                    <div class="counter-holder">
+                        <div class="clock-data"></div>
+                    </div>
+                    <div class="descriptions">
+                        <div class="days">
+                            дней
+                        </div>
+                        <div class="hours">
+                            часов
+                        </div>
+                        <div class="minutes">
+                            минут
+                        </div>
+                        <div class="seconds">
+                            секунд
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block content %}
+    <article class="page">
+        {{ model.content|raw }}
+    </article>
+{% endblock %}
+
+{% block after_content %}
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(function(){
+            var clock = new FlipClock($('.clock-data'), {
+                'clockFace': 'DailyCounter',
+                'countdown': true
+            });
+
+            clock.setTime('{{ 'next sunday'|strtotime - 'now'|strtotime }}');
+            clock.start();
+        });
+    </script>
+{% endblock %}

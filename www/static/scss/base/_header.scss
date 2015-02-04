@@ -1,6 +1,8 @@
 #header {
+  @include box-shadow(0 3px 35px rgba(49,127,144,.35));
+
   .header-inner {
-    $logoWidth: 60px;
+    $logoWidth: 188px;
     line-height: $header-height;
 
     .logo {

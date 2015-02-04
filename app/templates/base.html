@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="/static/dist/css/1.0.0.all.css"/>
     <script type="application/javascript" src="/static/dist/js/1.0.0.all.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.png" type="image/png">
@@ -38,12 +39,22 @@
                     </a>
                 </section>
             </section>
-            <section class="columns large-9">
+            <section class="columns large-6">
                 <div class="menu-holder">
                     <menu class="menu no-bullet main-menu justify">
-                        {{ get_menu('main-menu')|safe }}
+                        {{ get_menu('main')|safe }}
                     </menu>
                 </div>
+            </section>
+            <section class="call-us columns large-3">
+                <div class="phone">
+                    +7 (912) 821-44-41
+                </div>
+                <a class="back-call" href="#">
+                    <span class="call">
+                        Заказать обратный звонок
+                    </span>
+                </a>
             </section>
         </section>
     </header>
@@ -59,6 +70,9 @@
                     {% include "_breadcrumbs.html" %}
                 {% endblock %}
             </section>
+
+            {% block before_content %}
+            {% endblock %}
 
             {% block main %}
                 <section class="row">

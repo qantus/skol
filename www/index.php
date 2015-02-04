@@ -1,7 +1,7 @@
 <?php
 
 defined('MINDY_PATH') or define('MINDY_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
-
+date_default_timezone_set('Europe/Moscow');
 $debug = true;
 if ($debug) {
     defined('YII_DEBUG') or define('YII_DEBUG', true);

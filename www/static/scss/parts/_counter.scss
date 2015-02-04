@@ -1,0 +1,94 @@
+.counter-line {
+  background-color: #307f90;
+  height: 89px;
+
+  .counter-block {
+    width: 269px;
+    height: 89px;
+    position: relative;
+    left: -15px;
+    background: $t url('../images/main/counter-bg.png') 0 0 no-repeat;
+
+    .title {
+      padding-top: 5px;
+      text-align: center;
+      color: #fff;
+      font-size: 13px;
+      @include text-shadow(0 2px 2px rgba(15,72,84,.35));
+    }
+
+
+    .counter-holder {
+      padding-left: 27px;
+      padding-top: 7px;
+    }
+
+    .clock-data {
+      margin: 0;
+    }
+
+    .descriptions {
+      position: relative;
+      color: #fff;
+      font-size: 13px;
+      @include text-shadow(0 2px 2px rgba(15,72,84,.35));
+
+      &>div {
+        position: absolute;
+        top: 0;
+
+        &.days {
+          left: 35px;
+        }
+        &.hours {
+          left: 90px;
+        }
+        &.minutes {
+          left: 145px;
+        }
+        &.seconds {
+          left: 200px;
+        }
+      }
+    }
+  }
+
+
+  form {
+    float: right;
+    width: 680px;
+    padding-top: 25px;
+
+    input {
+      @include border-radius(12px);
+      @include background-clip(padding-box);
+      background-color: #0f4754;
+      @include box-shadow(0 1px 1px rgba(255,255,255,.17), inset 0 1px 3px rgba(0,0,0,.34));
+      color: #fff;
+      font-size: 13px;
+      @include text-shadow(0 2px 2px rgba(15,72,84,.35));
+      @include placeholder-color(#fff);
+      border: none;
+
+      &:hover, &:active, &:hover:active, &:focus {
+        background-color: #0f4754;
+      }
+    }
+
+    button {
+      @include border-radius(12px);
+      @include background-clip(padding-box);
+      background-color: #ffd100;
+      font-size: 15px;
+      font-weight: normal;
+      @include text-shadow(0 1px 1px rgba(255,255,255,.35));
+      color: #4e3e11;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 37px;
+      line-height: 37px;
+    }
+  }
+
+}

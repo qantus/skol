@@ -1,0 +1,30 @@
+#header {
+  .call-us {
+    text-align: right;
+    line-height: 1.3;
+    padding-top: 19px;
+
+    .phone {
+      font-size: 20px;
+    }
+
+    .back-call {
+      display: inline-block;
+      border-bottom: 1px dashed;
+      color: #000;
+      font-size: 12px;
+      position: relative;
+      margin-left: 27px;
+
+      &:before {
+        left: -27px;
+        position: absolute;
+        height: 18px;
+        width: 16px;
+        content: '';
+        display: block;
+        background: $t url('../images/main/call.png') 0 0 no-repeat;
+      }
+    }
+  }
+}
