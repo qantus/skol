@@ -31,12 +31,19 @@
           line-height: 1;
           font-weight: bold;
           @include antialias();
+
+          .first-line {
+            .text {
+
+            }
+          }
         }
 
         .info {
           margin-top: 10px;
           font-size: 16px;
           @include antialias();
+          margin-bottom: 10px;
         }
       }
     }

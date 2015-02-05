@@ -78,7 +78,8 @@ var paths = {
     fonts: [
         'fonts/Glyphico/fonts/*',
         'fonts/glyphico-social/fonts/*',
-        'fonts/lato/fonts/*'
+        'fonts/lato/fonts/*',
+        'vendor/slick-carousel/slick/fonts/*',
     ],
     sass: 'scss/**/*.scss',
     css: [

@@ -1,6 +1,5 @@
 {%- extends "base.html" -%}
 
-
 {% block before_content %}
     <section class="slider">
         <div class="row">
@@ -10,16 +9,33 @@
 
                     <div class="text-block">
                         <div class="text-data">
-                            <div class="title first-line">
-                                Скользит пол?
+                            <div class="animate title first-line">
+                                <span class="text">
+                                    Скользит пол
+                                </span>
+                                <span class="sign">
+                                    ?
+                                </span>
                             </div>
-                            <div class="title second-line">
-                                У нас есть решение!
+                            <div class="animate title second-line">
+                                <span class="text">
+                                    У нас есть решение
+                                </span>
+                                <span class="sign">
+                                    !
+                                </span>
                             </div>
                             <div class="info">
-                                Уникальное противоскользящее покрытие! Успейте купить по уникальной цене
-                                от производителя — всего 800 руб. за литр!
+                                <div class="line-1 animate">
+                                    Уникальное противоскользящее покрытие!
+                                </div>
+                                <div class="line-2 animate">
+                                    Успейте купить по уникальной цене от производителя — всего 800 руб. за литр!
+                                </div>
                             </div>
+                            <a class="more button animate" href="#counter">
+                                Узнать больше &darr;
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -27,7 +43,7 @@
         </div>
     </section>
 
-    <section class="counter-line">
+    <section class="counter-line" id="counter">
         <div class="row">
             <div class="column large-12">
 
@@ -40,7 +56,7 @@
                             <input type="text" name="phone" placeholder="Ваш телефон"/>
                         </div>
                         <div class="column large-4">
-                            <button type="submit">
+                            <button type="submit" class="button">
                                 Отправить заявку
                             </button>
                         </div>
@@ -73,12 +89,212 @@
         </div>
     </section>
 
+
+    <section class="about" id="about">
+        <div class="row">
+            <div class="column large-6">
+                {#<div class="title-h2">О компании</div>#}
+
+                {#<div class="about-text">#}
+                    {#<p>#}
+                        {#Существуют две основных трактовки понятия «текст»: «имманентная» (расширенная, философски#}
+                        {#нагруженная) и «репрезентативная» (более частная).#}
+                    {#</p>#}
+
+                    {#<p>#}
+                        {#Имманентный подход подразумевает отношение к тексту как к автономной реальности, нацеленность на#}
+                        {#выявление его внутренней структуры. Репрезентативный — рассмотрение текста как особой формы#}
+                        {#представления знаний о внешней тексту действительности.#}
+                    {#</p>#}
+
+                    {#<p>#}
+                        {#Существуют две основных трактовки понятия «текст»: «имманентная» (расширенная, философски#}
+                        {#нагруженная) и «репрезентативная» (более частная). Имманентный подход подразумевает отношение к#}
+                        {#тексту как#}
+                    {#</p>#}
+                {#</div>#}
+
+                {#<a href="#" class="more">Узнать подробнее</a> или#}
+                {#<a class="button">Заказать сейчас</a>#}
+
+                <div class="title-h2">Частые вопросы</div>
+
+                <div class="lines">
+                <div class="line number">
+                    <div class="number-holder">1</div>
+                    <div class="upper">Какие покрытия подходят?</div>
+                    <div class="lower">
+                        Практически все виды каменных покрытий (плитка, грант, керамогранит, мозаичные покрытия и т. д.),
+                        а также некоторые виды наливных полов
+                    </div>
+                </div>
+
+                <div class="line number">
+                    <div class="number-holder">2</div>
+                    <div class="upper">Портится ли покрытие?</div>
+                    <div class="lower">
+                        Нет, так как состав не проникает глубоко, а образует защитную пленку, за счет чего ваше покрытие прослужит даже дольше!
+                    </div>
+                </div>
+
+                <div class="line number">
+                    <div class="number-holder">3</div>
+                    <div class="upper">Как долго работает состав?</div>
+                    <div class="lower">
+                        Срок службы состава после нанесения составляет <br/>до 24 месяцев!
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="column large-6">
+                <div class="title-h2">Наши преимущества</div>
+
+                <div class="line rst">
+                    <div class="upper">Высокое качество продукции</div>
+                    <div class="lower">Подтверждено всеми необходимыми сертификатами.</div>
+                </div>
+                <div class="line rub">
+                    <div class="upper">Самые низкие цены в России</div>
+                    <div class="lower">Подтверждено всеми необходимыми сертификатами.</div>
+                </div>
+                <div class="line map">
+                    <div class="upper">Быстрая доставка в любой регион России</div>
+                    <div class="lower">Ставрополь, Екатеринбург, Пермь, Крым, Красноярск, Нижний Новгород, Казань, Киров
+                        и
+                        другие.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="column large-12">
+                <div class="give-me text-center">
+                    <span class="interested">
+                        Заинтересовало?
+                    </span>
+                    <a href="#" class="button">
+                        Заказать!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stripped actions">
+        <div class="text-center title-h2">Скидки и акции</div>
+
+        <div class="row">
+            <div class="column large-12">
+                <div class="action-slides">
+                {% for action in get_actions() %}
+                    <div class="action-slide">
+                        <div class="row">
+                            <div class="column large-3">
+                                <div class="image-holder">
+                                    <img src="{{ action.image.url_preview }}" alt="{{ action.name }}"/>
+                                </div>
+                            </div>
+                            <div class="column large-9">
+                                <div class="line">
+                                    <div class="upper">
+                                        {{ action.name }}
+                                    </div>
+                                    <div class="lower">
+                                        {{ action.info }}
+                                    </div>
+                                </div>
+                                <a class="button">Заказать сейчас</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(function(){
+                $('.action-slides').slick();
+            })
+        </script>
+    </section>
+
+    <section class="catalog">
+        <div class="text-center title-h2">Лучшие предложения из каталога</div>
+
+        <div class="row">
+            <div class="column large-3">
+                <div class="item">
+                    <div class="picture">
+
+                    </div>
+                    <div class="info">
+                        <div class="desc">
+                            Противоскользящий алюминиевый порог-угол
+                            Противоскользящий алюминиевый порог-угол
+                            Противоскользящий алюминиевый порог-угол
+                            много раз, но видна только первая одна строка, можно спамит сколько угодно
+                            пойду спать
+                        </div>
+                        <div class="order">
+                            <a class="button order-link">Заказать</a>
+                            <a class="more" href="#">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column large-3"></div>
+            <div class="column large-3"></div>
+            <div class="column large-3"></div>
+        </div>
+
+        <div class="row more-holder">
+            <div class="column large-12 text-center">
+                <a class="inv button" href="#">Смотреть весь каталог &rarr;</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="stripped blog">
+        <div class="text-center title-h2">Последние записи в блоге</div>
+
+        <div class="row">
+            <div class="column large-4">
+                <div class="blog-item line">
+                    <div class="heading upper">Нам доверяет даже Аэропорт!</div>
+                    <div class="time">19.11.2014</div>
+                    <div class="content lower">Произведена обработка нашим противоскользящим составом помещений Аэропорта
+                        г.Киров
+                    </div>
+                    <a href="#">Читать дальше</a>
+                </div>
+            </div>
+            <div class="column large-4"></div>
+            <div class="column large-4"></div>
+        </div>
+
+        <div class="row more-holder">
+            <div class="column large-12 text-center">
+                <a class="inv button" href="#">Смотреть все статьи блога &rarr;</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="map">
+
+    </section>
+
 {% endblock %}
 
 {% block content %}
-    <article class="page">
-        {{ model.content|raw }}
-    </article>
+
+    {#<article class="page">#}
+    {#{{ model.content|raw }}#}
+    {#</article>#}
+
 {% endblock %}
 
 {% block after_content %}
@@ -87,7 +303,7 @@
 
 {% block js %}
     <script type="text/javascript">
-        $(function(){
+        $(function () {
             var clock = new FlipClock($('.clock-data'), {
                 'clockFace': 'DailyCounter',
                 'countdown': true
