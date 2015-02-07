@@ -1,0 +1,33 @@
+.clients {
+  .item {
+    width: 222px;
+    border: 1px solid #dcdcdc;
+    @include border-radius(11px);
+    @include background-clip(padding-box);
+    background-color: #fff;
+
+    .picture {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      width: 220px;
+      height: 180px;
+      @include border-radius(10px 10px 0 0);
+      @include background-clip(padding-box);
+      background-color: #fff;
+      @include box-shadow(inset 0 0 15px rgba(0, 1, 2, .15));
+    }
+
+    .info {
+      padding: 10px 10px 10px;
+
+
+      .desc {
+        color: #434343;
+        font-size: 13px;
+        height: 82px;
+        overflow: hidden;
+      }
+    }
+  }
+}

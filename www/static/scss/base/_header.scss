@@ -1,5 +1,10 @@
 #header {
   @include box-shadow(0 3px 35px rgba(49,127,144,.35));
+  width: 100%;
+  height: 84px;
+  position: fixed;
+  background: #fff;
+  z-index: 1500;
 
   .header-inner {
     $logoWidth: 188px;

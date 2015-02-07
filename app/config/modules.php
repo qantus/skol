@@ -9,7 +9,9 @@ return [
     'Mail',
     'Menu',
     'Meta',
-    'Pages',
+    'Pages' => [
+        'pagesForm' => \Modules\Skol\Forms\PageForm::className()
+    ],
     'Redirect',
     'Sitemap',
     'Sites',

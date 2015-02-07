@@ -50,7 +50,7 @@
                 <div class="phone">
                     +7 (912) 821-44-41
                 </div>
-                <a class="back-call" href="#">
+                <a class="back-call mmodal" href="{% url 'skol:request' %}">
                     <span class="call">
                         Заказать обратный звонок
                     </span>
@@ -65,19 +65,16 @@
                 {% include "_flash.html" %}
             {% endblock %}
 
-            <section class="content-header {% block content_header_classes %}{% endblock %}">
-                {% block breadcrumbs %}
-                    {% include "_breadcrumbs.html" %}
-                {% endblock %}
-            </section>
-
             {% block before_content %}
             {% endblock %}
 
             {% block main %}
                 <section class="row">
-                    <section class="content columns large-12">
+                    <section class="content columns large-12 {% block content_classes %}{% endblock %}">
                         {% block heading %}{% endblock %}
+                        {% block breadcrumbs %}
+                            {% include "_breadcrumbs.html" %}
+                        {% endblock %}
                         {% block content %}{% endblock %}
                     </section>
                 </section>

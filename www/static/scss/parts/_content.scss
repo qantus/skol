@@ -1,4 +1,18 @@
+.breadcrumbs-container {
+  margin-bottom: 20px;
+}
+
 #content {
+
+  &>.row {
+    &>.content{
+      padding-top: 84px;
+
+      .index {
+        padding: 0;
+      }
+    }
+  }
   .title-h2 {
     color: #317f8f;
     font-family: 'Roboto Slab', serif;
@@ -6,7 +20,6 @@
     @include antialias();
     margin-bottom: 35px;
   }
-
 
   .about {
     padding: 50px 0;
@@ -44,7 +57,7 @@
       &.rub {
         background: $t url('../images/main/ico-rub.png') 0 0 no-repeat;
       }
-      &.map {
+      &.supply {
         background: $t url('../images/main/ico-map.png') 0 0 no-repeat;
       }
 
@@ -91,7 +104,7 @@
   }
 
   .stripped {
-    background: url(../images/main/pattern.jpg);
+    background: url(../images/main/pattern2.jpg);
     @include box-shadow(inset 0 0 13px rgba(0, 1, 2, .1));
   }
 
@@ -141,6 +154,18 @@
 
   .catalog {
     padding: 55px 0 40px 0;
+
+    &.nopadding {
+      padding: 0;
+    }
+
+    .title {
+      font-family: $header-font-family;
+      font-size: 24px;
+      color: $primary-color;
+      margin-bottom: 20px;
+    }
+
     .item {
       width: 222px;
       height: 296px;
@@ -150,8 +175,11 @@
       background-color: #fff;
 
       .picture {
-        width: 222px;
-        height: 179px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        width: 220px;
+        height: 180px;
         @include border-radius(10px 10px 0 0);
         @include background-clip(padding-box);
         background-color: #fff;
@@ -170,7 +198,7 @@
           overflow: hidden;
         }
 
-        .order{
+        .order {
           border-top: 1px #e5e5e5 solid;
           padding-top: 10px;
         }
@@ -206,6 +234,37 @@
 
   .blog {
     padding: 50px 0;
+
+    .line {
+      .upper {
+        color: #000;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .lower {
+        color: #434343;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .time {
+        color: #7b7b7b;
+        font-size: 11px;
+        margin-bottom: 15px;
+        padding-left: 20px;
+        background: $t url('../images/main/ico-calendar.png') 0 0 no-repeat;
+      }
+
+      a {
+        text-decoration: underline;
+        font-style: italic;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   .give-me {
@@ -225,6 +284,149 @@
       font-size: 18px;
     }
   }
+
+  .reviews {
+    padding: 55px 0 40px 0;
+
+    .review {
+      .image-holder {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        @include border-radius(40px);
+      }
+
+      img {
+        width: 70px;
+        height: 70px;
+      }
+
+      .review-head {
+        margin-bottom: 10px;
+      }
+
+      .review-head-data {
+        margin-left: 90px;
+
+        .username {
+          padding-top: 10px;
+          font-size: 20px;
+        }
+
+        .role {
+          color: #7b7b7b;
+          font-style: italic;
+        }
+      }
+    }
+
+    .more-holder {
+      margin-top: 30px;
+    }
+  }
+
+  .map {
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+
+    .holder {
+      position: relative;
+    }
+
+    #map {
+      height: 400px;
+    }
+    .card {
+      z-index: 10;
+      width: 304px;
+      height: 384px;
+      @include border-radius(10px);
+      @include background-clip(padding-box);
+      background-color: #fff;
+      @include box-shadow(0 5px 21px rgba(0, 1, 2, .19));
+      position: absolute;
+      right: 0;
+      top: -20px;
+
+      .info {
+        padding: 40px 20px 0;
+
+        .line {
+          padding: 0 0 26px 35px;
+
+          &.address {
+            background: $t url('../images/main/ico-geo.png') 0 1px no-repeat;
+          }
+          &.phone {
+            background: $t url('../images/main/ico-phone.png') 0 6px no-repeat;
+          }
+          &.mail {
+            background: $t url('../images/main/ico-mail.png') 0 7px no-repeat;
+          }
+          &.schedule {
+            background: $t url('../images/main/ico-clock.png') 0 0 no-repeat;
+          }
+
+          a {
+            color: #317f8f;
+            font-size: 12px;
+            border-bottom: 1px #317f8f dotted;
+
+            &:hover {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+
+      .foot {
+        padding: 15px 20px;
+        height: 65px;
+        background: url(../images/main/pattern.jpg);
+        @include box-shadow(inset 0 0 13px rgba(0, 1, 2, .1));
+        color: #434343;
+        font-size: 13px;
+
+        .net {
+          float: left;
+          display: inline-block;
+          margin-right: 5px;
+        }
+
+        a {
+          //width: 30px;
+          //height: 30px;
+          //float: left;
+          //display: inline-block;
+          margin: 0 5px;
+
+          i {
+            font-size: 30px;
+            color: #aaa;
+            //width: 30px;
+            //height: 30px;
+
+            &:hover {
+              color: #317f90;
+            }
+          }
+        }
+
+        //a.fb{
+        //  background: $t url('../images/main/ico-fb.png') 50% 50% no-repeat;
+        //}
+        //a.vk{
+        //  background: $t url('../images/main/ico-vk.png') 50% 50% no-repeat;
+        //}
+        //a.tw{
+        //  background: $t url('../images/main/ico-tw.png') 50% 50% no-repeat;
+        //}
+        //a.yt{
+        //  background: $t url('../images/main/ico-yt.png') 50% 50% no-repeat;
+        //}
+      }
+    }
+  }
 }
 
 .slider .image-holder .text-block .text-data {
@@ -238,69 +440,79 @@
   .animate {
     @include animation-name(slide);
     @include duration(0.7s);
-    @include delay(2s);
+    @include delay(1.4s);
     @include fill-mode(both);
     opacity: 0;
 
     &.first-line {
-      @include delay(2s);
+      @include delay(1.4s);
 
       .sign {
         @include animation-name(tada);
         @include duration(1s);
-        @include delay(3s);
+        @include delay(1.9s);
         @include fill-mode(both);
       }
     }
 
     &.second-line {
-      @include delay(4s);
+      @include delay(2.7s);
 
       .sign {
         @include animation-name(punch);
         @include duration(1s);
-        @include delay(5s);
+        @include delay(3.3s);
         @include fill-mode(both);
       }
     }
 
     &.line-1 {
-      @include delay(6s);
+      @include delay(4s);
       @include animation-name(slideTop);
     }
 
     &.line-2 {
-      @include delay(7.5s);
+      @include delay(4.7s);
       @include animation-name(slideTop);
     }
 
     &.button {
-      @include delay(10s);
+      @include delay(5.4s);
       @include animation-name(slideTop);
     }
   }
 }
 
+#content {
+  .content.index {
+    display: none;
+  }
+
+  .content {
+    padding: 40px 0;
+  }
+}
+
 @include keyframes(slide) {
   0% {
-    @include transform(translate3d(50px,0px,0));
+    @include transform(translate3d(50px, 0px, 0));
     opacity: 0;
   }
 
   100% {
-    @include transform(translate3d(0,0,0));
+    @include transform(translate3d(0, 0, 0));
     opacity: 1;
   }
 }
 
 @include keyframes(slideTop) {
   0% {
-    @include transform(translate3d(0,30px,0));
+    @include transform(translate3d(0, 30px, 0));
     opacity: 0;
   }
 
   100% {
-    @include transform(translate3d(0,0,0));
+    @include transform(translate3d(0, 0, 0));
     opacity: 1;
   }
 }

@@ -1,0 +1,35 @@
+{%- extends "base.html" -%}
+
+{% block heading %}
+    <h1>{{ product.name }}</h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% set this.breadcrumbs = [
+        [
+            'name' => 'Каталог',
+            'url' => '/catalog/'
+        ],
+        [
+            'name' => product.name
+        ]
+    ] %}
+    {% parent %}
+{% endblock %}
+
+{% block content %}
+    <div class="product">
+        <div class="row">
+            <div class="column large-4">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}"/>
+            </div>
+            <div class="column large-8">
+                {{ product.description|raw }}
+                <br>
+                <a href="{% url 'skol:request' %}" class="mmodal button">
+                    Заказать!
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+<div class="item">
+    <div class="picture">
+        <a href="{{ product.getAbsoluteUrl() }}">
+            <img src="{{ product.image.url_preview }}" alt="{{ product.name }}"/>
+        </a>
+    </div>
+    <div class="info">
+        <div class="desc">
+            {{ product.name }}
+        </div>
+        <div class="order">
+            <a class="button order-link mmodal" href="{% url 'skol:request' %}">Заказать</a>
+            <a class="more" href="{{ product.getAbsoluteUrl() }}">Узнать больше</a>
+        </div>
+    </div>
+</div>

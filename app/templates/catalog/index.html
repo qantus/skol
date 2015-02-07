@@ -1,0 +1,33 @@
+{%- extends "base.html" -%}
+
+{% block heading %}
+    <h1>Каталог</h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% set this.breadcrumbs = [
+        [
+            'name' => 'Каталог'
+        ]
+    ] %}
+    {% parent %}
+{% endblock %}
+
+{% block content %}
+    <div class="catalog nopadding">
+        {% for category in categories %}
+            <div class="category-block">
+                <div class="title">
+                    {{ category.name }}
+                </div>
+                <ul class="large-block-grid-4">
+                    {% for product in category.products.all %}
+                        <li>
+                            {% include 'catalog/_view.html' %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

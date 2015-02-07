@@ -1,0 +1,26 @@
+{%- extends "base.html" -%}
+
+{% block heading %}
+    <h1>Наши клиенты</h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% set this.breadcrumbs = [
+        [
+            'name' => 'Наши клиенты'
+        ]
+    ] %}
+    {% parent %}
+{% endblock %}
+
+{% block content %}
+    <div class="clients">
+        <ul class="large-block-grid-4">
+            {% for client in clients %}
+                <li>
+                    {% include 'skol/_view.html' %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

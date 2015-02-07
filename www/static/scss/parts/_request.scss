@@ -1,0 +1,36 @@
+.request-form {
+  .form-errors {
+    display: none;
+  }
+
+  h3 {
+    color: $primary-color;
+  }
+
+  label {
+    display: none;
+  }
+
+  .form-ul {
+    min-width: 250px;
+
+    &>li {
+      margin-bottom: 10px;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.mmodal-container .request-form {
+  padding: 20px;
+}
+
+.mmodal-container .form-success {
+  color: $primary-color;
+  font-family: $header-font-family;
+  font-size: 20px;
+  padding: 20px;
+}

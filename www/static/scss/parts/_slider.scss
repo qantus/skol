@@ -1,6 +1,7 @@
 .slider {
-  height: 450px;
-  background: $t url('../images/main/slider-bg.jpg') 50% 50% no-repeat;
+  height: 534px; //450+84
+  padding-top: 84px;
+  background: $t url('../images/main/slider-bg.jpg') 50% 84px no-repeat;
   background-size: cover;
 
   .image-holder {
