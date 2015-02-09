@@ -41,9 +41,9 @@ return [
             'databases' => [
                 'default' => [
                     'class' => '\Mindy\Query\Connection',
-                    'dsn' => 'mysql:host=192.168.2.2;dbname=c265_0',
-                    'username' => 'c265_0',
-                    'password' => '9TY4HjNe6gDpiB',
+                    'dsn' => 'mysql:host=192.168.2.2;dbname=c259_0',
+                    'username' => 'c259_0',
+                    'password' => 'xrToX2eBe2Q87S',
                     'charset' => 'utf8',
                 ]
             ]
