@@ -38,3 +38,8 @@ input, textarea, button, select {
 a, span, i{
   @include transition($defaultTransition);
 }
+
+
+#wrapper, #footer {
+  min-width: 1008px;
+}
