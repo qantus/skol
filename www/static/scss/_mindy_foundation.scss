@@ -39,7 +39,6 @@ a, span, i{
   @include transition($defaultTransition);
 }
 
-
-#wrapper, #footer {
+#wrapper, #footer, #header {
   min-width: 1008px;
 }
