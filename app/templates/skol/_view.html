@@ -1,6 +1,8 @@
 <div class="item">
     <div class="picture">
-        <img src="{{ client.image.url_preview }}" alt="{{ client.name }}"/>
+        {% if client.image.url %}
+            <img src="{{ client.image.url_preview }}" alt="{{ client.name }}"/>
+        {% endif %}
     </div>
     <div class="info">
         <div class="desc">

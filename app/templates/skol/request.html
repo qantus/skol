@@ -1,7 +1,7 @@
 {%- extends request.isAjax ? "ajax.html" : "pages/base.html" -%}
 
 {%- block content -%}
-    <form action="{% url 'skol:request' %}" method="post" class="request-form">
+    <form action="{% url 'skol:request' %}{% if sostav %}?sostav=1{% endif %}" method="post" class="request-form sostav">
         <h3>Заказать</h3>
 
         {{ form.asUl()|raw }}

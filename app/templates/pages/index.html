@@ -50,7 +50,20 @@
         </div>
     </section>
 
-    <section class="counter-line" id="counter">
+    <section class="up-counter-line" id="counter">
+        <div class="row">
+            <div class="column large-12">
+                <a class="mmodal image-holder" href="{% url 'skol:request' %}?sostav=1">
+                    <img src="/static/images/main/sostav.png" alt="Состав противоскольжения"/>
+                </a>
+
+                Акция: цена от производителя! <br>
+                При заказе сейчас цена составит <span class="old-price">1200 руб.</span> <span class="new-price">800 рублей</span> за литр!
+            </div>
+        </div>
+    </section>
+
+    <section class="counter-line">
         <div class="row">
             <div class="column large-12">
 
@@ -182,7 +195,7 @@
                     <span class="interested">
                         Заинтересовало?
                     </span>
-                    <a href="{% url 'skol:request' %}" class="mmodal button">
+                    <a href="{% url 'skol:request' %}?sostav=1" class="mmodal button">
                         Заказать!
                     </a>
                 </div>
@@ -213,7 +226,7 @@
                                             {{ action.info }}
                                         </div>
                                     </div>
-                                    <a class="button mmodal" href="{% url 'skol:request' %}">Заказать сейчас</a>
+                                    <a class="button mmodal" href="{% url 'skol:request' %}?sostav=1">Заказать сейчас</a>
                                 </div>
                             </div>
                         </div>
@@ -243,24 +256,47 @@
 
                         <div class="review-head-data">
                             <div class="username">
-                                Окулов Антон
+                                Александр Лобастов
                             </div>
                             <div class="role">
-                                Генеральный директор компании "Киров-Комфорт"
+                                ОАО "Слободской машиностроительный завод"
                             </div>
                         </div>
                     </div>
                     <p class="clear"></p>
 
                     <div class="review-content">
-                        Составом противосеольжения обработано крыльцо офиса. Сначала отнеслись скептически - сработает ли?
+                        Составом противоскольжения обработаны помещения завода. Сначала отнеслись скептически - сработает ли?
                         Но после обработки все вопросы отпали - состав действительно работает!
                         Теперь в любую погоду не переживаем за себя и своих клиентов.
                     </div>
                 </div>
             </div>
             <div class="column large-6">
+                <div class="review">
+                    <div class="review-head clearfix">
+                        <div class="image-holder left">
+                            <img src="/static/images/main/user2.jpg" alt=""/>
+                        </div>
 
+
+                        <div class="review-head-data">
+                            <div class="username">
+                                Евгений Устюжанинов
+                            </div>
+                            <div class="role">
+                                Компания "Салют №1"
+                            </div>
+                        </div>
+                    </div>
+                    <p class="clear"></p>
+
+                    <div class="review-content">
+                        Обработали крыльцо - не скользит. Ну совсем не скользит. Просто магия какая-то.
+                        До этого было очень страшно ходить - теперь можно хоть в футбол на крыльце играть!
+                        Просто чудесный состав и прекрасная компания!
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -331,11 +367,11 @@
                     <div class="card">
                         <div class="info">
                             <div class="text-center title-h2">Контакты</div>
-                            <div class="line address"> г. Киров, ул. Сурикова, д. 19</div>
                             <div class="line phone">
-                                +7 (912) 821-44-41<br/>
+                                <strong>+7 (912) 821-44-41</strong><br/>
                                 <a class="mmodal" href="{% url 'skol:request' %}">Заказать обратный звонок</a>
                             </div>
+                            <div class="line address"> г. Киров, ул. Сурикова, д. 19</div>
                             <div class="line mail">
                                 skoljeniya.net@mail.ru<br/>
                                 <a href="mailto:skoljeniya.net@mail.ru">Напишите нам</a>
@@ -391,11 +427,11 @@
             clock.setTime('{{ 'next sunday'|strtotime - 'now'|strtotime }}');
             clock.start();
 
-            $('#counter form').on('submit', function (e) {
+            $('.counter-line form').on('submit', function (e) {
                 e.preventDefault();
                 var $form = $(this);
                 $.ajax({
-                    'url': '/skol/request',
+                    'url': '/skol/request?sostav=1',
                     'data': $(this).serialize(),
                     'type': 'post',
                     'success': function (data) {
@@ -405,6 +441,39 @@
                 })
                 return false;
             });
+
+            function priceHighliter(count_letters){
+                console.log('highlight');
+                var timer = 70;
+                var secs = 0;
+                for (var i=0;i<count_letters;i++){
+                    secs+=timer;
+                    setTimeout("$('#phone-letter-"+ i + "').css('opacity','0.1')", secs);
+                    setTimeout("$('#phone-letter-"+ i + "').css('opacity','1')", secs+timer);
+                }
+            }
+
+            var phone = $('.new-price').text();
+            var inside = '';
+            var count_letters = 0;
+            for (var i in phone){
+                var letter = phone[i];
+                if (typeof letter == 'function') {
+                    continue;
+                }
+                if (letter == ' '){
+                    inside += letter;
+                }else{
+                    inside += '<span id="phone-letter-'+count_letters+'">'+letter+'</span>';
+                    count_letters++;
+                }
+
+            }
+            $('.new-price').html(inside);
+
+            setInterval(function(){
+                priceHighliter(count_letters);
+            }, 5000)
         });
 
         ymaps.ready(init);

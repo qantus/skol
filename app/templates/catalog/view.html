@@ -1,20 +1,11 @@
 {%- extends "base.html" -%}
 
-{% block heading %}
-    <h1>{{ product.name }}</h1>
+{% block seo %}
+    {{ meta(this) }}
 {% endblock %}
 
-{% block breadcrumbs %}
-    {% set this.breadcrumbs = [
-        [
-            'name' => 'Каталог',
-            'url' => '/catalog/'
-        ],
-        [
-            'name' => product.name
-        ]
-    ] %}
-    {% parent %}
+{% block heading %}
+    <h1>{{ product.name }}</h1>
 {% endblock %}
 
 {% block content %}

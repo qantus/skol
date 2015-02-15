@@ -1,3 +1,42 @@
+.up-counter-line {
+  padding: 20px 0;
+  font-size: 24px;
+  background-color: #c7102f;
+  color: #fff;
+  @include text-shadow(0 2px 2px rgba(15,72,84,.35));
+  @include box-shadow(inset 0 0 5px 2px rgba(0,0,0,0.2));
+  @include transition(none);
+
+  .image-holder {
+    width: 70px;
+    float: left;
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+    height: 58px;
+
+    img {
+      top: -60px;
+      position: relative;
+      width: 70px;
+      position: absolute;
+      z-index: 10;
+    }
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    font-size: 17px;
+    opacity: 0.8;
+  }
+
+  .new-price {
+    font-size: 28px;
+    font-weight: bold;
+    @include transition(none);
+  }
+}
+
 .counter-line {
   background-color: #307f90;
   height: 89px;
@@ -15,6 +54,7 @@
       color: #fff;
       font-size: 13px;
       @include text-shadow(0 2px 2px rgba(15,72,84,.35));
+      padding-left: 63px;
     }
 
 
